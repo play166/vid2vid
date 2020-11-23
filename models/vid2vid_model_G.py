@@ -293,7 +293,7 @@ class Vid2VidModelG(BaseModel):
         #    return feat_map
         
         load_name = 'checkpoints/edge2face_single/features.npy'
-        features = np.load(load_name, encoding='latin1').item()                        
+        features = np.load(load_name, encoding='latin1', allow_pickle=True).item()                        
         inst_np = inst.cpu().numpy().astype(int)
 
         # find nearest neighbor in the training dataset

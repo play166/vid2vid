@@ -100,14 +100,15 @@ class FaceDataset(BaseDataset):
                      [range(60, 65), [64,65,66,67,60]]                 # tongue
                     ]
         label_list = [1, 2, 2, 3, 4, 4, 5, 6] # labeling for different facial parts        
-        keypoints = np.loadtxt(A_path, delimiter=',')
+        keypoints = np.loadtxt(A_path, delimiter=',', dtype=np.float32)
         
         # add upper half face by symmetry
         pts = keypoints[:17, :].astype(np.int32)
         baseline_y = (pts[0,1] + pts[-1,1]) / 2
         upper_pts = pts[1:-1,:].copy()
         upper_pts[:,1] = baseline_y + (baseline_y-upper_pts[:,1]) * 2 // 3
-        keypoints = np.vstack((keypoints, upper_pts[::-1,:]))  
+        keypoints = np.vstack((keypoints, upper_pts[::-1,:]))
+        keypoints = keypoints.astype(np.int32)
 
         # label map for facial part
         w, h = size
