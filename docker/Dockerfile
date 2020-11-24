@@ -58,6 +58,7 @@ RUN python data/face_landmark_detection.py test
 # RUN python train.py --name edge2face_512 --dataroot datasets/face/ --dataset_mode face --input_nc 15 --loadSize 256 --num_D 3 --gpu_ids 0 --n_gpus_gen 1 --n_frames_total 1
 # RUN nvidia-smi
 RUN git pull
+RUN git pull
 RUN python scripts/download_vgg.py
 
 
