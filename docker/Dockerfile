@@ -35,7 +35,7 @@ RUN git clone https://github.com/NVIDIA/pix2pixHD /pix2pixHD
 RUN ls -al
 
 #vid2vid install
-RUN git clone https://github.com/play166/vid2vid.git /vid2vid
+# RUN git clone https://github.com/play166/vid2vid.git /vid2vid
 WORKDIR /vid2vid
 #download flownet2 model dependencies
 #WARNING: we had an instance where these scripts needed to be re-run after the docker instance was launched
