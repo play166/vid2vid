@@ -25,8 +25,9 @@ RUN pip install dominate requests opencv-python
 
 RUN apt-get install libgl1-mesa-glx -y
 RUN apt-get install build-essential -y
-RUN apt-get install cmake  vim   -y
+RUN apt-get install cmake -y
 RUN pip install dlib
+RUN apt-get install vim -y
 
 #pix2pixHD, required for initializing training
 RUN git clone https://github.com/NVIDIA/pix2pixHD /pix2pixHD
