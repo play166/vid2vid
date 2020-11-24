@@ -46,8 +46,8 @@ RUN export CUDA_HOME=/usr/local/cuda
 RUN python scripts/download_flownet2.py
 RUN python scripts/download_models_flownet2.py
 
-python ./scripts/download_datasets.py
-RUN python scripts/face/download_models.py
+RUN python ./scripts/download_datasets.py
+RUN python ./scripts/face/download_models.py
 
 # make train/test face landmark
 RUN python data/face_landmark_detection.py train
