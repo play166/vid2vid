@@ -46,11 +46,16 @@ RUN export CUDA_HOME=/usr/local/cuda
 RUN python scripts/download_flownet2.py
 RUN python scripts/download_models_flownet2.py
 
+python ./scripts/download_datasets.py
 RUN python scripts/face/download_models.py
 
+# make train/test face landmark
+RUN python data/face_landmark_detection.py train
+RUN python data/face_landmark_detection.py test
 
-
-
+# RUN python train.py --name edge2face_512 --dataroot datasets/face/ --dataset_mode face --input_nc 15 --loadSize 512 --num_D 3 --gpu_ids 0 --n_gpus_gen 1 --n_frames_total 1
+# min run train
+# RUN python train.py --name edge2face_512 --dataroot datasets/face/ --dataset_mode face --input_nc 15 --loadSize 256 --num_D 3 --gpu_ids 0 --n_gpus_gen 1 --n_frames_total 1
 
 
 
