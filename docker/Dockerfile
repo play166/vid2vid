@@ -3,6 +3,9 @@ FROM nvidia/cuda:10.0-cudnn7-devel-ubuntu16.04
 ENV CUDA_HOME=/usr/local/cuda
 
 RUN apt-get update && apt-get install -y rsync htop git openssh-server
+RUN cd /
+RUN git clone https://github.com/play166/vid2vid.git
+RUN cd /vid2vid
 
 RUN apt-get install python3-pip -y
 RUN ln -s /usr/bin/python3 /usr/bin/python
@@ -12,7 +15,7 @@ RUN pip3 install --upgrade pip
 RUN pip install https://download.pytorch.org/whl/cu100/torch-1.0.0-cp35-cp35m-linux_x86_64.whl
 # RUN pip install http://download.pytorch.org/whl/cu90/torch-1.0.0-cp35-cp35m-linux_x86_64.whl
 RUN pip install torchvision==0.2.1
-RUN pip install  cffi tensorboardX
+RUN pip install cffi tensorboardX
 RUN pip install tqdm scipy scikit-image colorama==0.3.7
 RUN pip install setproctitle pytz ipython
 
@@ -38,7 +41,8 @@ RUN python scripts/download_models_flownet2.py
 
 RUN apt-get install libgl1-mesa-glx -y
 RUN apt-get install build-essential -y
-RUN apt-get install cmake -y
+RUN apt-get install cmake  vim   -y
+
 RUN pip install dlib
 
 
