@@ -46,7 +46,7 @@ RUN export CUDA_HOME=/usr/local/cuda
 RUN python scripts/download_flownet2.py
 RUN python scripts/download_models_flownet2.py
 
-
+RUN python scripts/face/download_models.py
 
 
 

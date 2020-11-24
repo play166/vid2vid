@@ -8,9 +8,9 @@ python data/face_landmark_detection.py train
 # python train.py --name edge2face_512 --dataroot datasets/face/ --dataset_mode face --input_nc 15 --loadSize 512 --num_D 3 --gpu_ids 0,1,2,3,4,5,6,7 --n_gpus_gen 6 --n_frames_total 12  
 python train.py --name edge2face_512 --dataroot datasets/face/ --dataset_mode face --input_nc 15 --loadSize 512 --num_D 3 --gpu_ids 0 --n_gpus_gen 1 --n_frames_total 12
 
-# 2080ti有cuda cpp报错,好像要用这个才行
-proxychains wget https://download.pytorch.org/whl/cu100/torch-1.0.0-cp35-cp35m-linux_x86_64.whl
-pip3 install  -U ./torch-1.0.0-cp35-cp35m-linux_x86_64.whl
+# # 2080ti有cuda cpp报错,好像要用这个才行
+# proxychains wget https://download.pytorch.org/whl/cu100/torch-1.0.0-cp35-cp35m-linux_x86_64.whl
+# pip3 install  -U ./torch-1.0.0-cp35-cp35m-linux_x86_64.whl
 
 test
 
