@@ -56,7 +56,7 @@ RUN python data/face_landmark_detection.py test
 # RUN python train.py --name edge2face_512 --dataroot datasets/face/ --dataset_mode face --input_nc 15 --loadSize 512 --num_D 3 --gpu_ids 0 --n_gpus_gen 1 --n_frames_total 1
 # min run train
 # RUN python train.py --name edge2face_512 --dataroot datasets/face/ --dataset_mode face --input_nc 15 --loadSize 256 --num_D 3 --gpu_ids 0 --n_gpus_gen 1 --n_frames_total 1
-
+RUN python train.py --name edge2face_512 --dataroot datasets/face/ --dataset_mode face --input_nc 1 --loadSize 64 --num_D 3 --gpu_ids 0 --n_gpus_gen 1 --n_frames_total 1 --niter 1 --niter_decay 1
 
 
 
