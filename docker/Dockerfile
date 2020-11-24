@@ -23,6 +23,10 @@ RUN pip install setproctitle pytz ipython
 RUN apt-get install libglib2.0-0 libsm6 libxrender1 -y
 RUN pip install dominate requests opencv-python
 
+RUN apt-get install libgl1-mesa-glx -y
+RUN apt-get install build-essential -y
+RUN apt-get install cmake  vim   -y
+RUN pip install dlib
 
 #pix2pixHD, required for initializing training
 RUN git clone https://github.com/NVIDIA/pix2pixHD /pix2pixHD
@@ -39,11 +43,9 @@ RUN export CUDA_HOME=/usr/local/cuda
 RUN python scripts/download_flownet2.py
 RUN python scripts/download_models_flownet2.py
 
-RUN apt-get install libgl1-mesa-glx -y
-RUN apt-get install build-essential -y
-RUN apt-get install cmake  vim   -y
 
-RUN pip install dlib
+
+
 
 
 
