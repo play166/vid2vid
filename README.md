@@ -1,3 +1,15 @@
+
+When I run https://github.com/NVIDIA/vid2vid, I encountered some errors. In order to run it correctly, I made some adjustments.
+
+1. install docker and nvidia-docker
+2. ./docker/launch_docker.sh 
+3. happy play.
+
+emm.. if something still wrong
+1. sudo docker pull play166/vid2vid:CUDA9-py35_2
+2. happy play.
+
+
 <img src='imgs/teaser.gif' align="right" width=360>
 
 <br><br><br><br>
