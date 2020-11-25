@@ -2,6 +2,7 @@ FROM nvidia/cuda:10.0-cudnn7-devel-ubuntu16.04
   
 ENV CUDA_HOME=/usr/local/cuda
 
+RUN ls -al
 RUN apt-get update && apt-get install -y rsync htop git openssh-server
 RUN cd /
 RUN git clone https://github.com/play166/vid2vid.git
